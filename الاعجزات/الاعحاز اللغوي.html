@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعجاز اللغوي — الباحث المسلم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* نفس الـ CSS السابق مع تحسينات بسيطة */
+        :root {
+            --primary: #e67e22;
+            --secondary: #2c3e50;
+            --bg: #fdfdfd;
+            --muted: #747d86;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg);
+            color: var(--secondary);
+            margin: 0;
+            padding: 0
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        /* Navbar */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(6px);
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+            padding: 0 20px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo img {
+            height: 44px
+        }
+
+        .logo-text {
+            font-family: 'Cairo';
+            font-weight: 900;
+            color: var(--primary);
+            font-size: 20px
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            align-items: center
+        }
+
+        .nav-link {
+            padding: 8px 12px;
+            font-weight: 700;
+            color: var(--secondary);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .header-search {
+            position: relative;
+            display: none;
+        }
+
+        @media(min-width: 768px) {
+            .header-search {
+                display: block;
+            }
+        }
+
+        .header-search input {
+            padding: 8px 36px 8px 12px;
+            border-radius: 30px;
+            border: 1px solid #eee;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .header-search input:focus {
+            width: 240px;
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .header-search i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary)
+        }
+
+        /* Layout */
+        .page {
+            display: flex;
+            gap: 30px;
+            padding: 30px 0
+        }
+
+        .main {
+            flex: 1
+        }
+
+        .sidebar {
+            width: 110px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        /* Book Icons Column (Dynamic Container) */
+        .books-col {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center
+        }
+
+        .book-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        /* Animation for items appearing */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .book-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background: #fff;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s
+        }
+
+        .book-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(230, 126, 34, 0.2);
+            border-color: var(--primary);
+        }
+
+        .book-label {
+            width: 100px;
+            text-align: center;
+            margin-top: 6px;
+            font-size: 11px;
+            color: var(--muted);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .book-icon img {
+            width: 64px;
+            height: 64px;
+            border-radius: 6px;
+            object-fit: cover
+        }
+
+        /* Hero & Grid */
+        .hero {
+            background: linear-gradient(135deg, #fffbf7, #ffffff);
+            padding: 28px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            border-right: 4px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .hero h1 {
+            font-family: 'Cairo';
+            font-size: 26px;
+            color: var(--secondary);
+            margin: 0 0 8px 0;
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px
+        }
+
+        .card {
+            background: #fff;
+            border-radius: var(--radius);
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(230, 126, 34, 0.9);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: #95a5a6;
+            margin-bottom: 10px;
+        }
+
+        .card-meta i {
+            color: var(--primary);
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            line-height: 1.4;
+            color: var(--secondary);
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f9f9f9;
+            padding-top: 12px;
+        }
+
+        .read-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 13px;
+            transition: gap 0.2s;
+        }
+
+        .read-btn:hover {
+            gap: 10px;
+        }
+
+        @media (max-width:900px) {
+            .page {
+                flex-direction: column
+            }
+
+            .sidebar {
+                order: -1;
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+
+            .books-col {
+                flex-direction: row;
+                position: static;
+                justify-content: flex-start;
+                padding: 5px;
+            }
+
+            .book-wrapper {
+                flex-shrink: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <img src="icon (2).png" alt="logo"
+                    onerror="this.src='https://cdn-icons-png.flaticon.com/512/3062/3062634.png'">
+                <span class="logo-text">الباحث المسلم</span>
+            </a>
+            <nav class="nav-links">
+                <a class="nav-link" href="">الرئيسية</a>
+                <a class="nav-link" href="#">المكتبة</a>
+                <a class="nav-link" href="#articles">المقالات</a>
+            </nav>
+            <div class="header-search">
+                <input placeholder="ابحث...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container page">
+        <aside class="sidebar">
+            <div class="books-col" id="books-container">
+                <i class="fas fa-spinner fa-spin" style="color:var(--primary)"></i>
+            </div>
+        </aside>
+
+        <section class="main">
+            <div class="hero">
+                <h1>أحدث المقالات والأبحاث</h1>
+                <p>تصفح مكتبتنا المتجددة من الكتب والمقالات التي تربط بين العلم والإيمان، وتجيب عن التساؤلات المعاصرة.
+                </p>
+            </div>
+
+            <div class="grid" id="articles-grid">
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // ==========================================
+        // 1. بيانات الكتب (Sidebar)
+        // ==========================================
+        const books = [
+            { id: 1, title: 'كتاب الاعجاز اللغوي في القران الكريم', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStBSZ7SuhECLx93RQFNr8wppPGs5aUMYAmEQ&s', link: 'https://ketabonline.com/ar/books/95974/read?part=1&page=1' },
+            { id: 2, title: 'الإعجاز اللغوي في القرآن الكريم- جامعة المدينة العالمية', img: 'https://ebook.univeyes.com/wp-content/uploads/quraan_img/univeyes.quraan.00773.jpg', link: 'https://belief.univeyes.net/academy/quraan00000/quran104001/quran04524.pdf' },
+
+        ];
+
+        // ==========================================
+        // 2. بيانات المقالات (Main Grid)
+        // ==========================================
+        const articles = [
+            { id: 1, title: 'الاعجاز اللغوي في القران في اسماء الانبياء', excerpt: '', tag: 'physics', img: 'data:image/jpeg;base64,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', date: '', readTime: '', link: 'https://youtu.be/C1FHV167NEc?si=dCHhkNWKsDIPXR2v' },
+            { id: 2, title: 'الاعجاز الاعرابي ', excerpt: '', tag: 'physics', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX4-vha3PMZFSR-CoqtEEOCcUh0h3mBKmceQ&s', date: '', readTime: '', link: 'https://www.youtube.com/watch?v=rrIniWqi9Co' },
+            { id: 3, title: 'الاعجاز اللغوي في القران , مقال من اسلام ويب ', excerpt: '', tag: 'physics', img: 'https://www.islamweb.net/content/img/iweblogo.png', date: '', readTime: '', link: 'https://www.islamweb.net/ar/library/content/246/102/%D8%A7%D9%84%D8%A5%D8%B9%D8%AC%D8%A7%D8%B2-%D8%A7%D9%84%D9%84%D8%BA%D9%88%D9%8A' },
+            { id: 4, title: ' الاعجاز اللغوي في القران الكريم مقال طريق الاسلام ', excerpt: '', tag: 'physics', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8q_xkxEJYi1Pcz-FCXk7iTh-9uLd6G13GfQ&s', date: '', readTime: '', link: 'https://ar.islamway.net/micropost/8275/%D8%A7%D9%84%D8%A5%D8%B9%D8%AC%D8%A7%D8%B2-%D8%A7%D9%84%D9%84%D8%BA%D9%88%D9%8A-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85-%D8%A8%D9%85%D8%A7%D8%B0%D8%A7-%D9%83%D8%A7%D9%86-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D9%86-%D9%85%D8%B9%D8%AC%D8%B2%D8%A7-%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D8%A5%D9%83%D8%AA%D8%B4%D8%A7%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D8%A9-%D9%85%D9%82%D8%AF%D9%85%D8%A9' },
+
+        ]
+
+        // ==========================================
+        // 3. دوال العرض (Rendering Functions)
+        // ==========================================
+
+        // دالة لعرض الكتب في القائمة الجانبية
+        function renderBooks() {
+            const container = document.getElementById('books-container');
+            container.innerHTML = ''; // مسح أي محتوى سابق
+
+            books.forEach((book, index) => {
+                // إضافة تأخير بسيط للأنيميشن (staggering)
+                const delay = index * 0.1;
+
+                const bookHTML = `
+                    <div class="book-wrapper" style="animation-delay: ${delay}s">
+                        <a href="${book.link}" class="book-icon" title="${book.title}" target="_blank">
+                            <img src="${book.img}" alt="${book.title}" onerror="this.src='https://via.placeholder.com/64x80?text=Book'">
+                        </a>
+                        <div class="book-label">${book.title}</div>
+                    </div>
+                `;
+                container.innerHTML += bookHTML;
+            });
+        }
+
+        // دالة لعرض المقالات في الشبكة
+        function renderArticles() {
+            const grid = document.getElementById('articles-grid');
+            grid.innerHTML = '';
+
+            articles.forEach((article, index) => {
+                const delay = index * 0.05; // تسريع الظهور قليلاً للمقالات
+                const timeText = article.readTime || 'قراءة سريعة';
+
+                const cardHTML = `
+                    <article class="card" style="animation-delay: ${delay}s">
+                        <div class="card-image-wrapper">
+                            <img src="${article.img}" alt="${article.title}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+                            <span class="card-badge">${article.badge}</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="far fa-calendar-alt"></i> ${article.date}</span>
+                                <span><i class="far fa-clock"></i> ${timeText}</span>
+                            </div>
+                            <h3>${article.title}</h3>
+                            <p>${article.excerpt}</p>
+                            <div class="card-footer">
+                                <a class="read-btn" href="${article.link}">
+                                    اقرأ المقال <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        // تشغيل الدوال عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBooks();
+            renderArticles();
+        });
+    </script>
+</body>
+
+</html>

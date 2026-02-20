@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="بحث عن تصنيف Homo habilis ومناقشات التصنيف العلمية" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #e67e22;
+            --primary-dark: #d35400;
+            --accent: #27ae60;
+            --dark: #2c3e50;
+            --muted: #7f8c8d;
+            --bg: #ffffff;
+            --bg-soft: #fffbf7;
+            --card-shadow: 0 18px 50px rgba(12, 25, 34, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(6px);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .page-hero {
+            padding: 30px 0;
+            background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .page-hero .title {
+            font-family: 'Cairo';
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--dark);
+        }
+
+        /* Layout Grid */
+        .article-wrap {
+            display: grid;
+            /* تقسيم الصفحة: المقال يأخذ المساحة الأكبر والجانب يأخذ 320px */
+            grid-template-columns: 1fr 320px;
+            gap: 28px;
+            margin: 18px 0 48px;
+        }
+
+        .article-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            border: 1px solid #f3f3f3;
+            box-shadow: var(--card-shadow);
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .widget {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #f3f3f3;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .widget h4 {
+            font-family: 'Cairo';
+            margin: 0 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary);
+            display: block;
+            font-size: 18px;
+        }
+
+        .article-card h3 {
+            font-family: 'Cairo';
+            font-size: 22px;
+            color: var(--dark);
+            margin-top: 20px;
+        }
+
+        .blockquote {
+            border-right: 4px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            background: var(--bg-soft);
+            border-radius: 8px;
+        }
+
+        footer {
+            padding: 30px 0;
+            color: var(--muted);
+            text-align: center;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .article-wrap {
+                grid-template-columns: 1fr;
+                /* في الجوال تصبح فوق بعضها */
+            }
+
+            .sidebar {
+                order: 2;
+                /* الجانبي ينزل لأسفل في الشاشات الصغيرة */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:15px 0">
+                <div style="font-weight:800;font-family:Cairo; font-size: 20px;">منصة الباحث المسلم</div>
+                <div style="color:var(--muted)">homohabilis</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="title">هل للعظام دور هام في تكوين الحيوانات المنوية والبويضات ؟!</div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="article-wrap">
+
+            <article class="article-card">
+                <div class="meta-row">
+                    <div>
+                        <div style="color:var(--muted);font-size:13px;">تحديث: 12 فبراير 2026</div>
+                    </div>
+                    <div style="font-weight: 700;">بقلم: فريق الباحثون المسلمون</div>
+                </div>
+
+                <h3>محتوى البحث</h3>
+                <div class="blockquote">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/muslimresearchers/qsbggdzrdpwa&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true">
+                    </iframe>
+                </div>
+
+                <hr>
+
+                <p>
+                    سؤال قد يبدو سخيفًا، بل وغبيًا أيضًا، لكن كثيرًا ما تنقلب الأمور في العلم، من أمور في منتهى الغباء
+                    إلى حقائق.
+                    يبدو أنك لا تستطيع الإجابة بالخصيتين والمبيضين بكل ثقةٍ بعد الآن، فالعلماء في اضطراب نتيجة أبحاثٍ
+                    جديدة.
+                </p>
+                <p><b>(نقي العظام: النسيج داخل العظام، تُصطنع فيه كريات الدم).</b></p>
+                <p>نشر العلماء في الدورية العلمية cell ورقة علمية، يعرضون فيها أدلة تعارض النظرية التي لا تنسب دورًا
+                    لنقي العظام في تشكيل الخلايا الجنسية، وقدموا أدلة تثبت أن لنقي العظم دورًا في إمداد المبيض بالخلايا
+                    التناسلية.</p>
+
+                <ul>
+                    <li>تأكيد محايد للنتائج أن الخلايا المنتجة للخلايا الجنسية المتعددة موجودة في نقي عظم الإنسان
+                        والفأر.</li>
+                    <li>اكتشاف خلايا مكونة للخلايا الجنسية المتعددة في نقي عظام إناث متبرعات أعمارهن بين 24 و36 عامًا.
+                    </li>
+                    <li>تغيير مسلمة مركزية في علم الأحياء التكاثري كانت تقول أن الإناث تفقد القدرة على إنتاج البويضات
+                        بعد الولادة.</li>
+                </ul>
+
+                <p>وفي عام 2007 م نُشرت ورقة علمية لبحث وجد فيه العلماء دليلًا مباشرًا أن نقي العظام يخرج منه خلايا
+                    للخصية لتشكل الحيوانات المنوية في الإنسان.</p>
+
+                <div class="blockquote">
+                    {{وما أوتيتم من العلم إلا قليلًا}} [الإسراء: 85]
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="https://muslims-res.com/%d8%ac%d8%af%d9%84-%d8%b9%d9%84%d9%85%d9%8a-%d9%87%d9%84-%d9%84%d9%84%d8%b9%d8%b8%d8%a7%d9%85-%d8%af%d9%88%d8%b1-%d9%87%d8%a7%d9%85-%d9%81%d9%8a-%d8%aa%d9%83%d9%88%d9%8a%d9%86-%d8%a7%d9%84%d8%ad/"
+                        class="ref-link">انتقل إلى المصدر الأصلي</a>
+                </div>
+            </article>
+
+            <aside class="sidebar">
+                <div class="widget">
+                    <h4>مقالات مقترحة</h4>
+                    <div style="margin-top:10px">
+                        <a href="#" style="font-weight:700; display:block">هل نظرية التطور علم أم خرافة؟</a>
+                        <div style="color:var(--muted);font-size:12px">11 فبراير 2026</div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h4>الأكثر قراءة</h4>
+                    <div style="margin-top:10px">
+                        <a href="#" style="font-weight:700; display:block">الرد على شبهة الميراث في الإسلام</a>
+                        <div style="color:var(--muted);font-size:12px">15 يناير 2026</div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h4>أدوات</h4>
+                    <div style="display:flex; gap:10px; margin-top:10px">
+                        <button onclick="window.print()"
+                            style="cursor:pointer; background:var(--primary); color:white; border:none; padding:5px 15px; border-radius:5px;">طباعة</button>
+                        <button onclick="navigator.share({title:document.title, url:location.href})"
+                            style="cursor:pointer; background:var(--dark); color:white; border:none; padding:5px 15px; border-radius:5px;">مشاركة</button>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 - منصة الباحث المسلم — support@moslim-researcher.com
+        </div>
+    </footer>
+
+</body>
+
+</html>
