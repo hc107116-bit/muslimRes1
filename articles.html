@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة الباحث المسلم | مقالات وأبحاث</title>
+  <link rel="icon" type="image/x-icon" href="icon (2).png">
+  <!-- خطوط وأيقونات -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <meta name="description" content="منصة الباحث المسلم - مقالات، أبحاث، ردود على الشبهات، وإعجاز علمي.">
+
+  <style>
+    /* ======================================================================
+       Root variables + Reset
+       ملف الاستايلات الموسّع لتحسين واجهة قسم المقالات وتهيئته للطباعة
+       ====================================================================== */
+
+    :root {
+      --primary: #e67e22;
+      --primary-600: #d35400;
+      --accent: #27ae60;
+      --dark: #2c3e50;
+      --muted: #7f8c8d;
+      --bg: #ffffff;
+      --bg-soft: #fffbf7;
+      --card-shadow: 0 12px 40px rgba(44, 62, 80, 0.06);
+      --glass: rgba(255, 255, 255, 0.6);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      --max-width: 1280px;
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 40px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #f3f3f3;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      height: 82px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 54px;
+      width: 54px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-family: 'Cairo';
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--primary);
+      letter-spacing: -0.6px;
+    }
+
+    /* Navigation */
+    nav.nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav-item {
+      padding: 18px 12px;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .nav-item:hover {
+      background: var(--bg-soft);
+    }
+
+    .nav-link {
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* Search */
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .searchbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fbfbfb;
+      border: 1px solid #eee;
+      padding: 8px 12px;
+      border-radius: 999px;
+      min-width: 260px;
+    }
+
+    .searchbox input {
+      border: none;
+      background: transparent;
+      width: 100%;
+      font-size: 15px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 36px;
+      background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-family: 'Cairo';
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 14px;
+      max-width: 680px;
+    }
+
+    .hero-cta {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      border: 2px solid var(--primary);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    /* Stats */
+    .stats {
+      margin-top: 26px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .stat {
+      background: #fff;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid #f7f7f7;
+    }
+
+    .stat h3 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ======================================================================
+       Articles Section – تصميم محسّن ومفصّل
+       يشمل: شريط أدوات فلترة، شبكة كروت، صفحة مقال مفردة (قالب)
+       ====================================================================== */
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section .section-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section .section-title h2 {
+      font-size: 34px;
+      font-family: 'Cairo';
+      color: var(--dark);
+      display: inline-block;
+      position: relative;
+    }
+
+    .section .section-title h2::after {
+      content: '';
+      width: 90px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -12px;
+      right: 50%;
+      transform: translateX(50%);
+      border-radius: 3px;
+    }
+
+    /* Articles layout */
+    .articles-wrap {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 30px;
+      align-items: start;
+    }
+
+    /* Left: grid articles */
+    .articles-tools {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .tools-left {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .filter-btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* Search in articles */
+    .articles-search {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .articles-search input {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      min-width: 260px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid #f4f4f4;
+      transition: var(--transition);
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+    }
+
+    .article-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(14, 30, 37, 0.08);
+      border-color: rgba(211, 84, 0, 0.12);
+    }
+
+    .article-media {
+      position: relative;
+      height: 210px;
+      background: #eee;
+    }
+
+    .article-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .article-body {
+      padding: 20px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .article-body h3 {
+      font-family: 'Cairo';
+      font-size: 20px;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .article-body p {
+      color: var(--muted);
+      font-size: 15px;
+      flex: 1;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .meta-right {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .read-more:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--bg-soft);
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #f6f6f6;
+    }
+
+    .widget {
+      margin-bottom: 20px;
+    }
+
+    .widget h4 {
+      font-family: 'Cairo';
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .popular-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .popular-item img {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .popular-item h5 {
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      background: #fff;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid #f1f1f1;
+    }
+
+    /* Article page preview template (hidden by default) */
+    .article-full {
+      display: none;
+      background: #fff;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .article-full h1 {
+      font-family: 'Cairo';
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .article-full .lead {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f1720;
+      color: #fff;
+      padding: 50px 0 30px;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .footer a {
+      color: inherit;
+    }
+
+    .copyright {
+      text-align: center;
+      opacity: 0.6;
+      margin-top: 24px;
+    }
+
+    /* Responsive */
+    @media (max-width:1100px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .articles-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        order: 2;
+      }
+    }
+
+    @media (max-width:600px) {
+
+      .searchbox,
+      .articles-search input {
+        min-width: 120px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+    }
+
+    /* Print-friendly tweaks */
+    @media print {
+
+      .btn,
+      .nav-links,
+      .header-actions,
+      .searchbox {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="#">
+        <img src="icon (2).png" alt="logo">
+        <span class="logo-text">الباحث المسلم</span>
+      </a>
+
+      <nav class="nav-links">
+        <div class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></div>
+        <div class="nav-item"><a class="nav-link" href="#articles-page">المقالات</a></div>
+        <div class="nav-item"><a class="nav-link" href="library/indexlibrary.html">المكتبة</a></div>
+        <div class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></div>
+      </nav>
+
+      <div class="header-actions">
+        <div class="searchbox">
+          <i class="fas fa-search" style="color:var(--primary)"></i>
+          <input placeholder="ابحث في المقالات أو الكتب..." aria-label="البحث">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-title">منصة <span style="color:var(--primary)">الباحث المسلم</span> لنقد الإلحاد ومعالجة
+          الشبهات</div>
+        <p class="hero-sub">مرجع شامل للأبحاث والمقالات التي تجمع بين العقل والعلم للوصول إلى براهين واضحة، بأسلوب علمي
+          وأكاديمي مع المحافظة على لغة سهلة ومهنية.</p>
+
+        <div class="hero-cta">
+          <a href="#articles-page" class="btn btn-primary">تصفح المقالات <i class="fas fa-arrow-left"></i></a>
+          <a href="#library" class="btn btn-outline">زيارة المكتبة</a>
+        </div>
+
+        <div class="stats" style="margin-top:22px;">
+          <div class="stat">
+            <h3>+100</h3>
+            <p>كتاب ومؤلف</p>
+          </div>
+          <div class="stat">
+            <h3>+3</h3>
+            <p>مقال بحثي شهري</p>
+          </div>
+          <div class="stat">
+            <h3>+1000k</h3>
+            <p>زائر شهري</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center">
+        <img src="LOGO.png" alt="hero"
+          style="border-radius:20px; box-shadow:var(--card-shadow); width:100%; max-width:360px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES SECTION -->
+  <section id="articles-page" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>المقالات والأبحاث</h2>
+      </div>
+
+      <div class="articles-wrap">
+
+        <!-- LEFT: Grid -->
+        <div>
+          <div class="articles-tools">
+            <div class="tools-left">
+              <button class="filter-btn" data-filter="all">الكل</button>
+              <button class="filter-btn" data-filter="physics">فيزياء</button>
+              <button class="filter-btn" data-filter="biology">بيولوجيا</button>
+              <button class="filter-btn" data-filter="philosophy">فلسفة</button>
+            </div>
+
+            <div class="articles-search">
+              <input id="articles-search-input" placeholder="ابحث في عناوين المقالات...">
+              <button class="filter-btn" id="clear-search">مسح</button>
+            </div>
+          </div>
+
+          <div class="articles-grid" id="articles-grid">
+            <!-- سيتم ملء هذه الشبكة ديناميكياً عبر السكربت المضمن -->
+          </div> <!-- .articles-grid -->
+
+          <!-- ملاحظة: الترقيم الديناميكي سيُضاف آليًا بواسطة السكربت -->
+        </div>
+
+        <!-- RIGHT: Sidebar -->
+        <aside class="sidebar">
+          <div class="widget">
+            <h4>الأكثر قراءة</h4>
+            <div class="popular-item">
+              <div>
+                <h5>الرد على شبهة الميراث في الإسلام</h5>
+                <small style="color:var(--muted)">15 يناير 2026</small>
+              </div>
+            </div>
+            <div class="popular-item">
+              <div>
+                <h5>أدلة وجود الله العقلية: دليل الإتقان</h5>
+                <small style="color:var(--muted)">10 فبراير 2026</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h4>أقسام شائعة</h4>
+            <div class="tag-cloud">
+              <a class="tag" href="#">فيزياء</a>
+              <a class="tag" href="#">بيولوجيا</a>
+              <a class="tag" href="#">فلسفة</a>
+              <a class="tag" href="#">إعجاز</a>
+              <a class="tag" href="#">نقد</a>
+              <a class="tag" href="#">أخلاق</a>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h4>اشترك بالنشرة</h4>
+            <p style="color:var(--muted);">احصل على أحدث المقالات مباشرة إلى بريدك.</p>
+            <input type="email" placeholder="بريدك الإلكتروني"
+              style="width:100%; padding:10px; border-radius:8px; border:1px solid #eee; margin-top:8px;">
+            <button class="btn btn-primary" style="width:100%; margin-top:10px;">اشتراك</button>
+          </div>
+        </aside>
+
+      </div> <!-- .articles-wrap -->
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section" style="padding-top:10px;">
+    <div class="container">
+      <div style="display:flex; gap:26px; align-items:flex-start; flex-wrap:wrap;">
+        <div style="flex:1; min-width:320px;">
+          <h3 style="font-family:'Cairo'; font-size:26px;">هل لديك سؤال أو شبهة؟</h3>
+          <p style="color:var(--muted); margin-top:8px;">فريق الباحث المسلم جاهز للرد بمراجع موثوقة ومصادر علمية. تواصل
+            معنا وسنرد عليك بأقرب وقت.</p>
+
+          <div style="display:flex; gap:12px; align-items:center; margin-top:16px;">
+            <i class="fas fa-envelope-open-text" style="font-size:28px; color:var(--primary)"></i>
+            <div>
+              <h4 style="margin:0">راسلنا مباشرة</h4>
+              <p style="margin:0; color:var(--muted);">support@moslim-researcher.com</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form"
+          style="flex:1; min-width:320px; background:#fff; padding:18px; border-radius:12px; border:1px solid #f3f3f3;">
+          <input type="text" placeholder="الاسم الكامل"
+            style="width:100%; padding:12px; border-radius:8px; border:1px solid #eee; margin-bottom:10px;">
+          <input type="email" placeholder="البريد الإلكتروني"
+            style="width:100%; padding:12px; border-radius:8px; border:1px solid #eee; margin-bottom:10px;">
+          <textarea placeholder="اكتب سؤالك أو رسالتك هنا بالتفصيل..."
+            style="width:100%; padding:12px; border-radius:8px; border:1px solid #eee; min-height:140px;"></textarea>
+          <button type="submit" class="btn btn-primary" style="margin-top:10px; width:100%;">إرسال الرسالة</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex; gap:12px; align-items:center; margin-bottom:12px;"><img
+              src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="logo"
+              style="width:48px; height:48px; filter:brightness(0) invert(1);">
+            <div style="font-family:'Cairo'; font-weight:900;">الباحث المسلم</div>
+          </div>
+          <p style="opacity:0.7;">منصة علمية دعوية متخصصة في نقد الفكر الإلحادي وتقديم البراهين العقلية والعلمية على صحة
+            الإسلام.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;">روابط سريعة</h4>
+          <ul style="list-style:none; margin-top:10px;">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#library">المكتبة الشاملة</a></li>
+            <li><a href="#articles-page">أحدث المقالات</a></li>
+            <li><a href="#contact">من نحن</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#fff;">تابعنا</h4>
+          <div style="display:flex; gap:10px; margin-top:8px;">
+            <a class="btn-outline" href="#" style="border-radius:8px; padding:8px 10px;"><i
+                class="fab fa-facebook-f"></i></a>
+            <a class="btn-outline" href="#" style="border-radius:8px; padding:8px 10px;"><i
+                class="fab fa-youtube"></i></a>
+            <a class="btn-outline" href="#" style="border-radius:8px; padding:8px 10px;"><i
+                class="fab fa-telegram-plane"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">جميع الحقوق محفوظة &copy; 2026 - منصة الباحث المسلم. يُسمح بنشر المحتوى مع ذكر المصدر.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Article full preview modal (قالب ديناميكي) -->
+  <template id="article-template">
+    <div class="article-full" role="article">
+      <h1></h1>
+      <div class="lead"></div>
+      <div class="content" style="margin-top:18px; color:var(--dark);"></div>
+    </div>
+  </template>
+
+  <!-- سكربت ديناميكي للمقالات — عدّل مصفوفة articles فقط لإضافة/تعديل المقالات -->
+  <script>
+    /**
+      Dynamic articles renderer
+      - ضع مقالاتك هنا في مصفوفة `articles` فقط
+      - لا تحتاج لتعديل HTML بعد الآن
+    */
+
+    (function () {
+      const articles = [
+        { id: 1, title: 'هل الكون أزلي أم له بداية؟', excerpt: 'دراسة في القانون الثاني للديناميكا الحرارية وعلاقته بحدوث الكون؛ قراءة تراصّد الأدلة الفلكية والمنطق الكوني.', tag: 'physics', badge: 'فيزياء كونية', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=60', date: '15 يناير 2026', readTime: '12 دقيقة', link: 'a1.html', category: 'فيزياء' },
+        { id: 2, title: 'التعقيد غير القابل للاختزال', excerpt: 'عرض لمفاهيم التعقيد الحيوي والأنظمة غير القابلة للاختزال ومعنى ذلك في نقاشات أصل الحياة.', tag: 'biology', badge: 'بيولوجيا', img: 'https://egyresmag.com/wp-content/uploads/2021/03/%D8%B9%D8%B6%D9%8A%D9%91%D8%A7%D8%AA_1.jpg', date: '22 يناير 2026', readTime: '9 دقائق', link: 'a2.html', category: 'بيولوجيا' },
+        { id: 3, title: 'أدلة وجود الله العقلية: دليل الإتقان', excerpt: 'مقال يشرح برهان النظام والإتقان في الكون ويعرض كيف كانت له تداعيات فلسفية على مفهوم الخالق.', tag: 'philosophy', badge: 'فلسفة وعلم ونفس وتفكير', img: 'https://shuounislamiya.com/wp-content/uploads/2020/12/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%86-%D9%88%D8%AC%D9%88%D8%AF-%D8%A7%D9%84%D9%84%D9%87-1.jpg', date: '10 فبراير 2026', readTime: '11 دقيقة', link: 'a3.html', category: 'فلسفة' },
+        { id: 4, title: 'رد على شبهة الميراث في الإسلام', excerpt: 'تحليل مبني على المصادر الفقهية والنصوص التاريخية لكيفية فهم أحكام الميراث وما يدور حولها من شبهات.', tag: 'philosophy', badge: 'رد الشبهات', img: 'https://media.elwatannews.com/media/img/mediaarc/medium/16417275121689777659.jpg', date: '15 يناير 2026', readTime: '8 دقائق', link: 'a4.html', category: 'نقد' },
+        { id: 5, title: 'الثوابت الكونية الدقيقة وتأثيرها', excerpt: 'قائمة بأشهر الثوابت الكونية ولماذا يعتبرها البعض دليلاً على الدقة الموجودة في الكون.', tag: 'physics', badge: 'فيزياء', img: 'https://fadiswaiti.wordpress.com/wp-content/uploads/2017/01/wp-1485453875423.jpg', date: '23 يناير 2026', readTime: '', link: 'a5.html', category: 'فيزياء' },
+        { id: 6, title: 'نظرية التطور: علم أم خرافة؟', excerpt: 'نقاش نقدي وتحليلي حول مبادئ نظرية التطور والتفريق بين الدليل العلمي والتفسير الفلسفي.', tag: 'physics', badge: 'أحياء', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxFQ19UdFCeN8SBSQ6wq2n3Oc2ebaxbSjAsA&s', date: '23 يناير 2026', readTime: '', link: 'a6.html', category: 'أحياء' },
+        { id: 7, title: 'نظرية التطور: احفورة homo habilis', excerpt: 'نقاش نقدي وتحليلي حول مبادئ نظرية التطور والتفريق بين الدليل العلمي والتفسير الفلسفي.', tag: 'physics', badge: 'أحياء', img: 'https://media.australian.museum/media/dd/images/Some_image.2e16d0ba.fill-600x400.922c81c.jpg', date: '23 يناير 2026', readTime: '', link: 'a7.html', category: 'أحياء' },
+        // أضف ما تريد هنا — فقط اتبع الشكل {id, title, excerpt, tag, badge, img, date, readTime, link, category}
+      ];
+
+      const grid = document.getElementById('articles-grid');
+      if (!grid) return console.warn('articles-grid element not found');
+
+      // إعدادات ترقيم الصفحات
+      const perPage = 6;
+      let currentPage = 1;
+
+      // عناصر التحكم الحالية في الصفحة
+      const filterBtns = Array.from(document.querySelectorAll('.filter-btn[data-filter]'));
+      const searchInput = document.getElementById('articles-search-input');
+      const clearBtn = document.getElementById('clear-search');
+
+      // دالة بناء كرت المقال
+      function makeCard(a) {
+        const art = document.createElement('article');
+        art.className = 'article-card';
+        art.setAttribute('data-tags', a.tag || '');
+        art.style.display = 'flex';
+
+        art.innerHTML = `
+        <div class="article-media">
+          <img src="${a.img}" alt="${escapeHtml(a.title)}">
+          <span class="article-badge">${escapeHtml(a.badge || '')}</span>
+        </div>
+        <div class="article-body">
+          <h3>${escapeHtml(a.title)}</h3>
+          <p>${escapeHtml(a.excerpt)}</p>
+          <div class="article-meta">
+            <div class="meta-right">${escapeHtml(a.date)} · <span style="font-weight:900; color:var(--primary)">${escapeHtml(a.readTime)}</span></div>
+          </div>
+          <div style="margin-top:10px; display:flex; justify-content:space-between; align-items:center;">
+            <a href="${a.link}" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            <div style="color:var(--muted); font-weight:700;">تصنيف: ${escapeHtml(a.category || 'عام')}</div>
+          </div>
+        </div>
+      `;
+        return art;
+      }
+
+      // دالة للتصفية + البحث + الصفحات
+      function applyFilters() {
+        const q = (searchInput && searchInput.value || '').trim().toLowerCase();
+        // نحسب المقالات المطابقة قبل التقطيع للصفحات
+        const activeFilter = (document.querySelector('.filter-btn.active') || {}).dataset?.filter || 'all';
+
+        let filtered = articles.filter(a => {
+          const hay = (a.title + ' ' + a.excerpt + ' ' + (a.category || '')).toLowerCase();
+          const tagMatch = activeFilter === 'all' ? true : (a.tag || '').toLowerCase().includes(activeFilter);
+          const textMatch = !q ? true : hay.includes(q);
+          return tagMatch && textMatch;
+        });
+
+        // pagination
+        const total = filtered.length;
+        const pages = Math.max(1, Math.ceil(total / perPage));
+        if (currentPage > pages) currentPage = pages;
+        const start = (currentPage - 1) * perPage;
+        const pageItems = filtered.slice(start, start + perPage);
+
+        // render
+        grid.innerHTML = '';
+        if (pageItems.length === 0) {
+          grid.innerHTML = '<div style="grid-column:1/-1; padding:40px; text-align:center; color:var(--muted)">لا توجد مقالات مطابقة.</div>';
+        } else {
+          pageItems.forEach(a => grid.appendChild(makeCard(a)));
+        }
+
+        renderPagination(pages);
+      }
+
+      // render pagination buttons (مرن وبسيط)
+      function renderPagination(pages) {
+        // إزالة أي قائمة ترقيم سابقة
+        const existing = document.getElementById('articles-pagination');
+        if (existing) existing.remove();
+
+        const container = document.createElement('div');
+        container.id = 'articles-pagination';
+        container.style.marginTop = '20px';
+        container.style.display = 'flex';
+        container.style.justifyContent = 'center';
+        container.style.gap = '10px';
+
+        // زر السابق
+        const prev = document.createElement('button');
+        prev.className = 'filter-btn';
+        prev.textContent = '‹ السابق';
+        prev.disabled = currentPage === 1;
+        prev.onclick = () => { if (currentPage > 1) { currentPage--; applyFilters(); window.scrollTo({ top: document.getElementById('articles-page').offsetTop - 80, behavior: 'smooth' }); } };
+        container.appendChild(prev);
+
+        // أرقام الصفحات (اعرض حتى 7 أرقام ذكية)
+        const range = pageRange(currentPage, pages, 7);
+        range.forEach(p => {
+          const b = document.createElement('button');
+          b.className = 'filter-btn';
+          b.textContent = p === '...' ? '...' : String(p);
+          if (p !== '...') {
+            if (p === currentPage) { b.style.background = 'var(--primary)'; b.style.color = '#fff'; }
+            b.onclick = () => { if (p !== currentPage) { currentPage = p; applyFilters(); window.scrollTo({ top: document.getElementById('articles-page').offsetTop - 80, behavior: 'smooth' }); } };
+          } else {
+            b.disabled = true;
+          }
+          container.appendChild(b);
+        });
+
+        // زر التالي
+        const next = document.createElement('button');
+        next.className = 'filter-btn';
+        next.textContent = 'التالي ›';
+        next.disabled = currentPage === pages;
+        next.onclick = () => { if (currentPage < pages) { currentPage++; applyFilters(); window.scrollTo({ top: document.getElementById('articles-page').offsetTop - 80, behavior: 'smooth' }); } };
+        container.appendChild(next);
+
+        // أضف بعد الشبكة
+        grid.parentNode.appendChild(container);
+      }
+
+      // helper: نطاق صفحات بسيط
+      function pageRange(current, total, maxLen) {
+        if (total <= maxLen) return Array.from({ length: total }, (_, i) => i + 1);
+        const half = Math.floor(maxLen / 2);
+        let start = Math.max(1, current - half);
+        let end = Math.min(total, current + half);
+        if (end - start + 1 < maxLen) {
+          if (start === 1) end = Math.min(total, start + maxLen - 1);
+          else if (end === total) start = Math.max(1, end - maxLen + 1);
+        }
+        const range = [];
+        if (start > 1) { range.push(1); if (start > 2) range.push('...'); }
+        for (let i = start; i <= end; i++) range.push(i);
+        if (end < total) { if (end < total - 1) range.push('...'); range.push(total); }
+        return range;
+      }
+
+      // helper: هروب نصي بسيط للأمان
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/[&<>"']/g, function (m) {
+          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]);
+        });
+      }
+
+      // listeners: Filter buttons (يحول الفلتر النشط)
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // إزالة الكلاس من الكل، ثم إضافته للضغط الحالي
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // إذا كان الفلتر 'all' أعد الصفحة الأولى
+          currentPage = 1;
+          applyFilters();
+        });
+      });
+
+      // تهيئة: اجعل زر all مفعّل افتراضياً إذا لم يكن شيء
+      if (!document.querySelector('.filter-btn.active')) {
+        const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+        if (allBtn) allBtn.classList.add('active');
+      }
+
+      // البحث
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          currentPage = 1;
+          applyFilters();
+        });
+      }
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          // إعادة تفعيل all
+          filterBtns.forEach(b => b.classList.remove('active'));
+          const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+          if (allBtn) allBtn.classList.add('active');
+          currentPage = 1;
+          applyFilters();
+        });
+      }
+
+      // أول رندر
+      applyFilters();
+
+    })();
+  </script>
+
+</body>
+
+</html>

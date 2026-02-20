@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homo Habilis - البحث الكامل</title>
+  <meta name="description" content="بحث عن تصنيف Homo habilis ومناقشات التصنيف العلمية" />
+  <link rel="icon" type="image/x-icon" href="icon (2).png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #e67e22;
+      --primary-dark: #d35400;
+      --accent: #27ae60;
+      --dark: #2c3e50;
+      --muted: #7f8c8d;
+      --bg: #ffffff;
+      --bg-soft: #fffbf7;
+      --card-shadow: 0 18px 50px rgba(12, 25, 34, 0.06);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: 0.3s
+    }
+
+    a:hover {
+      color: var(--primary-dark)
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* Header / Hero */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(6px);
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .page-hero {
+      padding: 30px 0;
+      background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%);
+      text-align: center;
+    }
+
+    .page-hero .title {
+      font-family: 'Cairo';
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .page-hero .subtitle {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* Layout */
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      margin: 18px 0 48px;
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid #f3f3f3;
+      box-shadow: var(--card-shadow);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .meta-right {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    /* Typography inside article */
+    .article-card h1 {
+      font-family: 'Cairo';
+      font-size: 28px;
+      color: var(--primary-dark);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .article-card h2 {
+      font-family: 'Cairo';
+      font-size: 24px;
+      color: var(--dark);
+      margin-top: 25px;
+      border-right: 5px solid var(--primary);
+      padding-right: 10px;
+    }
+
+    .article-card h3 {
+      font-family: 'Cairo';
+      font-size: 20px;
+      color: #444;
+      margin-top: 20px;
+      font-weight: 700;
+    }
+
+    .article-card p {
+      margin-bottom: 15px;
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    .blockquote {
+      border-right: 4px solid var(--primary);
+      padding: 15px 20px;
+      margin: 20px 0;
+      background: var(--bg-soft);
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ref-link {
+      display: block;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .widget {
+      background: #fff;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #f3f3f3;
+    }
+
+    .widget h4 {
+      font-family: 'Cairo';
+      margin: 0 0 8px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    footer {
+      padding: 22px 0;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+
+    @media (max-width:1000px) {
+      .article-wrap {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0">
+        <div style="font-weight:800;font-family:Cairo">منصة الباحث المسلم</div>
+        <div style="color:var(--muted)">homohabilis</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="title">Homo Habilis - البحث الكامل</div>
+      <div class="subtitle">بحث عن تصنيف Homo habilis والمناقشات العلمية حوله</div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="article-wrap">
+
+      <article class="article-card">
+
+        <div class="meta-row">
+          <div>
+            <h2 style="margin:0; border:none; padding:0; font-size:22px;">homohabilis</h2>
+            <div style="color:var(--muted);font-size:13px; margin-top:5px;">تحديث: 12 فبراير 2026</div>
+          </div>
+          <div class="meta-right">بقلم: فريق البحث</div>
+        </div>
+
+        <!-- المحتوى كما طُلِب تماماً بدون نقصان -->
+        <h3>homohabilis</h3>
+
+        <p>يقول بعض الاشخاص الداعمين للنظريه ان هناك حفريات ليه homohabili هل هذا حقيقه</p>
+
+        <p>ولكن اتضح انه احفورات لقرده منقرضه</p>
+
+        <p>هذا بحث علمي يوضح ذالك من مجلة سينس</p>
+
+        <p>a - <a href="https://www.science.org/doi/10.1126/science.284.5411.65"
+            target="_blank">https://www.science.org/doi/10.1126/science.284.5411.65</a></p>
+
+        <p><img src="homoH.png" alt=""></p>
+
+        <hr>
+
+        <h3>شرح مبسط للنقاط الرئيسية التي يطرحها النص:</h3>
+
+        <p>1. المشكلة الأساسية في التصنيف يشير النص إلى مشكلة عامة في علم الأحياء وهي كيفية دمج "التاريخ التطوري"
+          و"التكيف" داخل نظام التصنيف (التكسونوميا). هذه المشكلة تظهر بوضوح عند محاولة تعريف جنسنا البشري (Homo).</p>
+
+        <p>2. فشل المعايير التقليدية قام الباحثون بمراجعة القواعد والمعايير القديمة التي كان يتم بناءً عليها ضم الحفريات
+          إلى جنس Homo، ووجدوا أنها إما:</p>
+
+        <p>غير مناسبة (Inappropriate).</p>
+
+        <p>أو غير قابلة للتطبيق عملياً (Inoperable).</p>
+
+        <p>3. اقتراح تعريف جديد ونتائج صادمة بناء على معايير جديدة قابلة للتحقق، توصل الباحثون إلى استنتاجات تعيد ترتيب
+          السجل الأحفوري:</p>
+
+        <p>استبعاد نوعين Homo habilis (الإنسان الماهر) و Homo rudolfensis لا ينتميان في الحقيقة إلى جنس Homo (يجب
+          إخراجهم منه).</p>
+
+        <p>ولذالك يلزم ازالتها من تصنيف homo كما قالت مجلة سينس</p>
+
+        <p><img src="homo 2026-02-12 165741.png" alt=""></p>
+
+        <p>يعني با كل اختصار هذه عند العلماء قرود منقرضه وليست سوللة homo</p>
+
+        <p>حتى ان العالم الشهير Bernard Wood قال انه ربما لا تصلح لتكون اول مرشح لتكون اول عضو بشري</p>
+
+        <p>مصدر:</p>
+
+        <p><a href="https://www.youtube.com/watch?si=tBda1PRQC8brb3DB&t=319&v=wmWqojkcJ_8&feature=youtu.be"
+            target="_blank">https://www.youtube.com/watch?si=tBda1PRQC8brb3DB&t=319&v=wmWqojkcJ_8&feature=youtu.be</a>
+        </p>
+
+        <p>تى ان العالم الشهير Mark Collard قال انهو يجب ازالتها من جنس homo (البشري) الي الجنس الأوسترالوبيثيكوس
+          (المنقرضه)</p>
+
+        <p>مصدر</p>
+
+        <p><a href="https://www.youtube.com/live/IZmnWguq7sA?t=2961s"
+            target="_blank">https://www.youtube.com/live/IZmnWguq7sA?t=2961s</a></p>
+
+        <p>حتى ان العالم Tattersall لم يصِفها كلمة “قرد” صريحة — لكنه قال أن Homo habilis ليس منظمًا تصنيفيًا جيدًا، وأن
+          تصنيفه ضمن Homo غير قابل للدعم القوي.</p>
+
+        <div class="blockquote">
+          “...Wood & Collard (1999) sensibly restricted Homo …
+          rejecting from it the fossils usually classified as H.
+          habilis … Sadly this advice has been ignored …
+          converting it back into a wastebasket taxon.”
+        </div>
+
+        <p>مصدر</p>
+
+        <p><a href="https://www.academia.edu/30420892/Defining_and_Recognizing_the_Genus_Homo?utm_source=app.com"
+            target="_blank">https://www.academia.edu/30420892/Defining_and_Recognizing_the_Genus_Homo?utm_source=app.com</a>
+        </p>
+
+        <p>تقول المجلة ان بعد 30 عام من اعتقادنا ان الهموم هبلس حلقه وسيطه تبين انها لا تصلح</p>
+
+        <p><img src="apphomo2026-02-12 170135.png" alt=""></p>
+
+        <hr>
+
+        <h3>معلومه على السريع:</h3>
+
+        <p>هل تعلم ان ليس هوناك اي احفوريه وسيطه معتمده علميا تثبت ان نظرية التطور صحيح هذا بحث اخر ضع كل المعلومات دون
+          انقاص حرف واحد</p>
+
+        <!-- نهاية المحتوى المطلوب -->
+      </article>
+
+      <aside class="sidebar">
+
+        <div class="widget">
+          <h4>مقالات مقترحة</h4>
+          <div style="display:flex; gap:10px; align-items:center; margin-top:10px">
+            <div>
+              <a href="#" style="font-weight:800; display:block">هل نظرية التطور علم أم خرافة؟</a>
+              <div style="color:var(--muted);font-size:13px">11 فبراير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>الأكثر قراءة</h4>
+          <div style="display:flex; gap:10px; align-items:center; margin-top:10px">
+            <div>
+              <a href="#" style="font-weight:800; display:block">الرد على شبهة الميراث في الإسلام</a>
+              <div style="color:var(--muted);font-size:13px">15 يناير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>شارك المقال</h4>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a href="#"
+              onclick="navigator.share && navigator.share({title:document.title,url:location.href})">مشاركة</a>
+            <a href="#" onclick="window.print()">طباعة</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <footer>
+      © 2026 - منصة الباحث المسلم — support@moslim-researcher.com
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

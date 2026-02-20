@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>التعقيد غير القابل للاختزال</title>
+  <meta name="description"
+    content="مقال علمي فلسفي يناقش مفهوم التعقيد غير القابل للاختزال وعلاقته بنشأة الكون والحياة.">
+  <link rel="icon" type="image/x-icon" href="icon (2).png">
+
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #e67e22;
+      --primary-dark: #d35400;
+      --accent: #27ae60;
+      --dark: #2c3e50;
+      --muted: #7f8c8d;
+      --bg: #ffffff;
+      --bg-soft: #fffbf7;
+      --card-shadow: 0 18px 50px rgba(12, 25, 34, 0.06);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+      margin: 0
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(6px);
+      border-bottom: 3px solid var(--primary)
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px
+    }
+
+    /* Hero */
+    .page-hero {
+      padding: 22px 0;
+      background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%)
+    }
+
+    .page-hero .title {
+      font-family: 'Cairo';
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--dark)
+    }
+
+    .page-hero .subtitle {
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    /* Article */
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      margin: 18px 0 48px
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid #f3f3f3;
+      box-shadow: var(--card-shadow)
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px
+    }
+
+    .meta-left {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .author-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover
+    }
+
+    .meta-right {
+      color: var(--muted);
+      font-weight: 700
+    }
+
+    .cover {
+      width: 100%;
+      height: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 12px 0
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .widget {
+      background: #fff;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #f3f3f3
+    }
+
+    .widget h4 {
+      font-family: 'Cairo';
+      margin: 0 0 8px
+    }
+
+    .popular {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .popular img {
+      width: 72px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px
+    }
+
+    footer {
+      padding: 22px 0;
+      color: var(--muted);
+      text-align: center
+    }
+
+    .article-card h2 {
+      font-family: 'Cairo';
+      font-size: 22px;
+      margin-top: 6px
+    }
+
+    .article-card h3 {
+      font-family: 'Cairo';
+      font-size: 18px;
+      margin-top: 16px
+    }
+
+    .blockquote {
+      border-right: 4px solid var(--primary);
+      padding: 12px;
+      margin: 10px 0;
+      background: var(--bg-soft);
+      border-radius: 8px
+    }
+
+    @media (max-width:1000px) {
+      .article-wrap {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="title">برهين وجود الله</div>
+      <div class="subtitle">قراءة علمية وفلسفية في أحد أقوى مفاهيم التصميم</div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="article-wrap">
+
+      <!-- Main Article -->
+      <article class="article-card">
+
+        <div class="meta-row">
+          <div class="meta-left">
+            <div>
+              <div style="font-weight:800">التعقيد غير القابل للاختزال</div>
+              <div style="color:var(--muted);font-size:13px">نشر في: 22 يناير 2026</div>
+            </div>
+          </div>
+          <div class="meta-right">بقلم: الباحث المسلم</div>
+        </div>
+
+        <p>في هذا المقال نستعرض مفهوم "الضبط الدقيق" و"التعقيد غير القابل للاختزال" كما عرضه علماء الفيزياء والفلك، ونضع
+          أمثلة مقالية مقتطفة من كتاب <em>Just Six Numbers</em> لمارتن ريس، مع شهادات لعدد من العلماء الذين تحدثوا عن
+          انطباعهم من دقة ثوابت الكون.</p>
+
+        <h3 style="text-align:center;margin-top:18px">فيديو: الدكتور إياد القنيبي يتكلم عن الضبط الدقيق</h3>
+        <div style="text-align:center;margin:12px 0">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/x2MQxaygzrc?si=OpxRkl3BtjTgeP5G"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h3 style="text-align:center;margin-top:18px">فيديو وثائقي: دقة الكون الرهيبة</h3>
+        <div style="text-align:center;margin:12px 0">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/19qClsEM2YI?si=CkjhWVJaAgsJeadS"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2>أمثلة مقالية: مقتطفات من كتاب <em>Just Six Numbers</em></h2>
+
+        <p>تُشكّل القوانين الرياضية أساس نسيج كوننا – ليس فقط الذرات، بل المجرات والنجوم والبشر. تُحدّد خصائص الذرات –
+          أحجامها وكتلها، وعدد أنواعها المختلفة، والقوى التي تربطها ببعضها – التركيب الكيميائي لعالمنا اليومي.</p>
+
+        <p>يعتمد وجود الذرات نفسه على قوى وجسيمات في أعماقها. تخضع الأجرام التي يدرسها علماء الفلك – الكواكب والنجوم
+          والمجرات – لقوة الجاذبية. ويحدث كل شيء في فضاء كون متوسع، طُبعت خصائصه فيه عند الانفجار العظيم.</p>
+
+        <div class="blockquote">
+          <p>• الكون شاسعٌ للغاية لوجود رقم هائل بالغ الأهمية، يُرمز له بـ Ɲ، في الطبيعة، يساوي
+            1,000,000,000,000,000,000,000,000,000,000,000,000. هذا الرقم يقيس قوة القوى الكهربائية التي تربط الذرات
+            ببعضها، مقسومة على قوة الجاذبية بينها. لو كان عدد أصفار Ɲ أقل ببضعة أصفار، لكان الكون مصغرًا قصير الأجل فقط
+            ولم يكن ليوجد أي كائن حي أكبر من الحشرات، ولما كان هناك وقت للتطور البيولوجي.</p>
+
+          <p>• رقم آخر، Ω، قيمته 0.007، يحدد مدى قوة ترابط نوى الذرات وكيفية تكوين جميع الذرات على الأرض. تتحكم قيمته في
+            الطاقة القادمة من الشمس، وبشكل أدق، في كيفية تحويل النجوم للهيدروجين إلى جميع ذرات الجدول الدوري. لو كانت
+            قيمة Ω تساوي 0.006 أو 0.008، لما استطعنا الوجود.</p>
+
+          <p>• يقيس العدد الكوني Ω (أوميغا) كمية المادة في كوننا — المجرات والغاز المنتشر و"المادة المظلمة". يُخبرنا Ω
+            بالأهمية النسبية للجاذبية وطاقة التوسع في الكون. فلو كانت هذه النسبة مرتفعة جدًا مقارنةً بقيمة "حرجة" معينة،
+            لانهار الكون منذ زمن بعيد؛ ولو كانت منخفضة جدًا، لما تشكلت مجرات أو نجوم. يبدو أن سرعة التوسع الأولية كانت
+            مضبوطة بدقة.</p>
+
+          <p>• كان قياس الرقم الرابع، λ (لامدا)، أهم خبر علمي في 1998. قوة جديدة غير متوقعة — "مضادة جاذبية" كونية —
+            تتحكم في توسع كوننا. ومن المُقدر لها أن تُصبح أكثر هيمنة على الجاذبية والقوى الأخرى مع ازدياد ظلمة كوننا
+            وفراغه. لحسن حظنا أن قيمة λ صغيرة جدًا، وإلا لكان تأثيرها قد أوقف المجرات والنجوم من التكوّن.</p>
+
+          <p>• بذور جميع البنى الكونية — النجوم والمجرات وتجمعات المجرات — طُبعت جميعها في الانفجار العظيم. يعتمد نسيج
+            كوننا على رقم واحد، Q، يُمثل نسبة طاقتين أساسيتين، وقيمته حوالي 1/100,000. لو كان Q أصغر من ذلك لكان الكون
+            خاملًا وبلا بنية؛ لو كان أكبر بكثير لكان مكانًا عنيفًا لا تستطيع فيه النجوم أو الأنظمة الشمسية البقاء.</p>
+
+          <p>• الرقم السادس الحاسم معروف منذ قرون: عدد الأبعاد المكانية في عالمنا، Ɒ، ويساوي ثلاثة. لا يمكن أن توجد
+            الحياة لو كان Ɒ اثنين أو أربعة. الزمن بعد رابع، لكنه يختلف اختلافًا جوهريًا عن الأبعاد الأخرى في أنه يحتوي
+            على سهم داخلي: فنحن "نتحرك" فقط نحو المستقبل.</p>
+
+          <p>• نحن نقف على مفترق الكون والعالم المجهري — متوسط الحجم بين الشمس، التي يبلغ قطرها مليار متر، وجزيء يبلغ
+            حجمه جزءًا من مليار من المتر. ليست من قبيل المصادفة أن تبلغ الطبيعة أقصى درجات تعقيدها على هذا المقياس
+            المتوسط.</p>
+
+        </div>
+
+        <h2>شهادات علماء حول انطباع الضبط الدقيق</h2>
+
+        <div class="blockquote">
+          <p>عالِم الفلك البريطاني الشَّهير فريد هويل يقول: «إنَّ التَّفسير المنطقي السَّليم للحقائق يُوحي بأنَّ عقلية
+            خارقة عبثت بالفيزياء وكذلك الكيمياء والأحياء، وأنَّه لا وُجُود لقُوَى عمياء جديرة بالحديث عنها في
+            الطَّبيعة».</p>
+
+          <p>جورج أليس: «ثمَّة ضبط دقيق مُذهل للقوانين هو الذي يجعل هذا (التَّعقيد) مُمكنًا؛ فإنَّ إدراك تعقيد ما تمّ
+            إنجازه يجعل من الصَّعب جدًا عدم استخدام كلمة "مُعجز"».</p>
+
+          <p>بول ديفيس: «بالنِّسبة لي، يوجد دليل قوي على وُجُود شيء ما يحدث وراء كلّ هذا، يبدو أنَّ شخصًا ما أحكم ضبط
+            أرقام هذا الكون الطِّبيعية ليخلق الكون، فانطباع فكرة التَّصميم ساحق».</p>
+
+          <p>آرثر ادينجتون: «إنَّ فكرة عقل كونيّ، أو العقل الأوَّل، ستكون فيما أعتقد، استنتاجًا منطقيًا جدًا وفقًا للوضع
+            الحالي للنَّظرية العِلْمِيَّة».</p>
+
+          <p>آرنو بنزياس (الحاصل على نوبل): «يقودنا عِلْم الفَلَك لحدثٍ فريدٍ، وهو خلق كونٍ من لا شيء، كونٌ موزونٌ
+            بميزانٍ دقيقٍ، من أجل توفير الظُّرُوف التي تسمح بالحياة؛ كونٌ له خُطَّة مُحكمة».</p>
+
+          <p>فرانك تيبلر: «بدأت حياتي المِهنِيَّة كعالم كونيات مُلحدًا... وقد أجبرني المنطق المتصلِّب لدراستي
+            التَّخصُّصية للفيزياء على الوُصُول لهذه النَّتائج».</p>
+
+          <p>فريمان دايسون: «كُلَّما أتفحَّص الكون، وتفاصيل بِنْيَتِهِ، وجدتُ دليلاً يُثبت أنَّ الكون بطريقةٍ ما كان
+            يعلم بقُدُومنا».</p>
+
+          <p>ستيفن هوكينج: «إنَّ قِيَم هذه الأرقام يبدو أنَّها قد تمَّضبطها بشكلٍ دقيقٍ جدًّا لإتاحة نشأة الحياة».</p>
+
+        </div>
+
+        <p>هذا النص مقتبس ومجمع ليوفّر للقارئ عرضًا مركزًا لأهم نقاط كتاب مارتن ريس وملاحظات عدد من العلماء حول انطباع
+          الضبط الدقيق. يمكن التوسع في كل نقطة بإضافة مراجع علمية مفصّلة أو حوار نقدي حول تفسيرات الضبط (منها التفسير
+          البنيوي، التعدد الأكوان، والحجج التصميمية).</p>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+
+        <div class="widget">
+          <h4>مقالات مقترحة</h4>
+          <div class="popular">
+            <div>
+              <div style="font-weight:800">التعقيد غير القابل للاختزال</div>
+              <div style="color:var(--muted);font-size:13px">22 يناير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>الأكثر قراءة</h4>
+          <div class="popular">
+            <div>
+              <div style="font-weight:800">الرد على شبهة الميراث في الإسلام</div>
+              <div style="color:var(--muted);font-size:13px">15 يناير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>شارك المقال</h4>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a href="#"
+              onclick="navigator.share && navigator.share({title:document.title,url:location.href})">مشاركة</a>
+            <a href="#" onclick="window.print()">طباعة</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <footer>
+      © 2026 - منصة الباحث المسلم — support@moslim-researcher.com
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

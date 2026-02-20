@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>منصة الباحث المسلم | بوابة العلم والإيمان</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="icon (2).png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        /* ========================================================================== 
+           1. المتغيرات والأنماط الأساسية (Root & Reset)
+           ========================================================================== */
+        :root {
+            --primary: #e67e22;
+            --primary-dark: #d35400;
+            --primary-light: #f39c12;
+            --secondary: #2c3e50;
+            --accent: #27ae60;
+            --bg-light: #fffbf7;
+            --bg-white: #ffffff;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --border: #f1f1f1;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================================================== 
+           2. الهيدر والتنقل (Header & Navigation)
+           ========================================================================== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 55px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .logo-text {
+            font-family: 'Cairo', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        /* القائمة الرئيسية */
+        .nav-links {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 30px 15px;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link i {
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+
+        .nav-item:hover .nav-link {
+            color: var(--primary);
+        }
+
+        .nav-item:hover .nav-link i {
+            transform: rotate(180deg);
+        }
+
+        /* القوائم المنسدلة */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg-white);
+            min-width: 260px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 0 0 12px 12px;
+            border-top: 4px solid var(--primary);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            padding: 15px 0;
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown li a {
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: var(--text-dark);
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .dropdown li a:hover {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding-right: 35px;
+        }
+
+        .dropdown li a i {
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* شريط البحث */
+        .header-search {
+            position: relative;
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .header-search input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            background: #fdfdfd;
+            font-family: 'Tajawal';
+            font-size: 14px;
+        }
+
+        .header-search i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* زر القائمة للجوال */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: var(--secondary);
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        /* ========================================================================== 
+           3. قسم الهيرو (Hero Section)
+           ========================================================================== */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fffbf7 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: rgba(230, 126, 34, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cairo';
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 17px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ========================================================================== 
+           4. قسم الإحصائيات (Stats)
+           ========================================================================== */
+        .stats {
+            background: var(--secondary);
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        /* ========================================================================== 
+           5. قسم المكتبة (Library)
+           ========================================================================== */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: 'Cairo';
+            font-size: 38px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 2px;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .book-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .book-thumb {
+            height: 320px;
+            background: #eee;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .book-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .book-card h4 {
+            font-size: 19px;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .book-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 700;
+            border: 1px solid var(--primary);
+            padding: 8px 0;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .download-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ========================================================================== 
+           6. أقسام المحتوى (الإعجاز ونقد الإلحاد)
+           ========================================================================== */
+        .features-box {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .feature-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .feature-card:hover i,
+        .feature-card:hover h4,
+        .feature-card:hover p {
+            color: #fff;
+        }
+
+        .feature-card i {
+            font-size: 45px;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .feature-card h4 {
+            font-family: 'Cairo';
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* ========================================================================== 
+           7. قسم المقالات (Articles)
+           ========================================================================== */
+        .articles-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .main-articles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .article-box {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .article-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .article-img {
+            height: 200px;
+            background: #ddd;
+            position: relative;
+        }
+
+        .article-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-meta {
+            padding: 25px;
+        }
+
+        .article-tag {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .article-meta h4 {
+            font-size: 20px;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        .article-meta p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .sidebar {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+
+        .widget-title {
+            font-family: 'Cairo';
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-right: 4px solid var(--primary);
+            padding-right: 15px;
+        }
+
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .popular-post img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .popular-post h5 {
+            font-size: 16px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .popular-post small {
+            color: var(--text-gray);
+        }
+
+        /* ========================================================================== 
+           8. قسم الآية الكريمة (The Verse)
+           ========================================================================== */
+        .quran-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.95)),
+                url('https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 100px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .verse-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .verse-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .quran-verse-text {
+            font-family: 'Cairo';
+            font-size: 45px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #f39c12;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .verse-ref {
+            font-size: 18px;
+            opacity: 0.7;
+            letter-spacing: 2px;
+        }
+
+        /* ========================================================================== 
+           9. نموذج التواصل (Contact)
+           ========================================================================== */
+        .contact-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: #fdfdfd;
+            font-family: 'Tajawal';
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ========================================================================== 
+           10. الفوتر (Footer)
+           ========================================================================== */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-about p {
+            opacity: 0.6;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .footer-links h4 {
+            font-family: 'Cairo';
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul li a {
+            opacity: 0.6;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-right: 10px;
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .newsletter button {
+            width: 100%;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        /* ========================================================================== 
+           11. التجاوب (Responsive) - ميديا كويري محسنة
+           ========================================================================== */
+
+        /* الشاشات المتوسطة (تابلت) */
+        @media (max-width: 1100px) {
+            .navbar {
+                height: auto;
+                padding: 15px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                order: 3;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                padding: 80px 20px 30px;
+                gap: 0;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-item {
+                padding: 0;
+                width: 100%;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-link {
+                padding: 15px 0;
+                justify-content: space-between;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                min-width: auto;
+                background: #f9f9f9;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-item.active .dropdown {
+                max-height: 500px;
+            }
+
+            .dropdown li a {
+                padding: 12px 30px;
+            }
+
+            .header-search {
+                width: 100%;
+                max-width: 250px;
+                margin-right: auto;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* الشاشات الصغيرة (جوال) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .header-search {
+                order: 4;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 15px;
+            }
+
+            .hero-flex {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 30px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .feature-tabs {
+                grid-template-columns: 1fr;
+            }
+
+            .main-articles {
+                grid-template-columns: 1fr;
+            }
+
+            .articles-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .quran-verse-text {
+                font-size: 28px;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .book-thumb {
+                height: 250px;
+            }
+        }
+
+        /* شاشات صغيرة جداً */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-about .logo-text {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <img src="icon (2).png" alt="Logo">
+                <span class="logo-text">الباحث المسلم</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">الرئيسية</a>
+                </div>
+
+                <div class="nav-item" id="dropdown1">
+                    <a href="#" class="nav-link">ملف الإعجاز <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="الاعجزات/الاعجاز-العلمي.html"><i class="fas fa-microscope"></i> الإعجاز العلمي</a>
+                        </li>
+                        <li><a href="#"><i class="fas fa-monument"></i> الإعجاز التاريخي</a></li>
+                        <li><a href="#"><i class="fas fa-book-open"></i> الإعجاز اللغوي</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-item" id="dropdown2">
+                    <a href="#" class="nav-link">نقد الإلحاد <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="https://muslimres.ahlamontada.com/"><i class="fas fa-shield-halved"></i> رد
+                                الشبهات</a></li>
+                        <li><a href="a3.html"><i class="fas fa-universal-access"></i> أدلة وجود الله</a></li>
+                        <li><a href="articles.html"><i class="fas fa-dna"></i> نقد التطور</a></li>
+                        <li><a href="articles.html"><i class="fas fa-brain"></i> العقل والنفس</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-item">
+                    <a href="library/indexlibrary.html" class="nav-link">المكتبة</a>
+                </div>
+            </nav>
+
+            <div class="header-search">
+                <input type="text" placeholder="ابحث عن بحث أو كتاب...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-flex">
+            <div class="hero-content animate__animated animate__fadeInRight">
+                <h1>منصة <span>الباحث المسلم</span> لنقد الإلحاد ومعالجة الشبهات</h1>
+                <p>مرجعك الشامل للرد على الأفكار المادية المعاصرة، وتوضيح براهين الإيمان من خلال العلم التجريبي والمنطق
+                    العقلي السليم.</p>
+                <div class="hero-btns">
+                    <a href="library/indexlibrary.html" class="btn btn-primary">تصفح الكتب <i
+                            class="fas fa-arrow-left"></i></a>
+                    <a href="articles.html" class="btn btn-outline">آخر الأبحاث</a>
+                </div>
+            </div>
+            <div class="hero-image animate__animated animate__zoomIn">
+                <img src="icon (2).png" alt="Learning">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>+50</h3>
+                <p>كتاب ومؤلف</p>
+            </div>
+            <div class="stat-item">
+                <h3>+10</h3>
+                <p>مقال بحثي</p>
+            </div>
+            <div class="stat-item">
+                <h3>+50k</h3>
+                <p>زائر شهري</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>محقق علمياً</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-box section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>محاور المنصة</h2>
+            </div>
+            <div class="feature-tabs">
+                <div class="feature-card">
+                    <i class="fas fa-atom"></i>
+                    <h4>الإعجاز العلمي</h4>
+                    <p>استكشاف التوافق بين الحقائق القرآنية والاكتشافات العلمية الحديثة في شتى العلوم.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>رد الشبهات</h4>
+                    <p>تفنيد الادعاءات المثارة حول الإسلام ونصوصه بمنهجية علمية وتاريخية رصينة.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-vial"></i>
+                    <h4>نقد التطور</h4>
+                    <p>دراسة الثغرات العلمية في نظرية التطور الداروينية من منظور بيولوجي تخصصي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="library" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>المكتبة الرقمية</h2>
+            </div>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <span class="book-badge">الأكثر تحميلاً</span>
+                        <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1383216191i/18743857.jpg"
+                            alt="Book">
+                    </div>
+                    <h4>وهم الإلحاد</h4>
+                    <p>د. عمرو شريف</p>
+                    <a href="library/books/وهم-الالحاد.pdf" target="_blank" rel="noopener" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> افتح الكتاب
+                    </a>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="library/img-books/شموع النهار.webp" alt="Book">
+                    </div>
+                    <h4>شموع النهار</h4>
+                    <p>أ. عبدالله العجيري</p>
+                    <a href="library/books/شموع-النهار.pdf" target="_blank" rel="noopener" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> افتح الكتاب
+                    </a>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <img src="library/img-books/برهين-النبوة.webp" alt="Book">
+                    </div>
+                    <h4>براهين النبوة</h4>
+                    <p>د. سامي عامري</p>
+                    <a href="https://alta3b.com/wp-content/uploads/2019/06/%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%86-%D8%A7%D9%84%D9%86%D8%A8%D9%88%D8%A9-%D9%88%D8%A7%D9%84%D8%B1%D8%AF-%D8%B9%D9%84%D9%89-%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%B4%D8%B1%D9%82%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D9%85%D9%86%D8%B5%D8%B1%D9%8A%D9%86-%D8%B3%D8%A7%D9%85%D9%8A-%D8%B9%D8%A7%D9%85%D8%B1%D9%8A.pdf"
+                        target="_blank" rel="noopener" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> افتح الكتاب
+                    </a>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-thumb">
+                        <span class="book-badge">جديد</span>
+                        <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1418419377i/21533184.jpg"
+                            alt="Book">
+                    </div>
+                    <h4>ميليشيا الإلحاد</h4>
+                    <p>أ. عبدالله العجيري</p>
+                    <a href="library/books/ميليشيا-الإلحاد.pdf" target="_blank" rel="noopener" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> افتح الكتاب
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <center><a href="library/indexlibrary.html">
+                <h1 style="color: #e67e22;">تصفح كل الكتب...</h1>
+            </a></center>
+        <hr>
+    </section>
+
+    <section id="articles" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>أحدث الأبحاث والمقالات</h2>
+            </div>
+            <div class="articles-container">
+                <div class="main-articles">
+                    <div class="article-box">
+                        <div class="article-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Space">
+                        </div>
+                        <div class="article-meta">
+                            <span class="article-tag">فيزياء كونية</span>
+                            <h4>هل الكون أزلي أم له بداية؟</h4>
+                            <p>دراسة في القانون الثاني للديناميكا الحرارية وعلاقته بحدوث الكون...</p>
+                            <a href="articles.html" style="color:var(--primary); font-weight:700;">اقرأ المزيد <i
+                                    class="fas fa-chevron-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="article-box">
+                        <div class="article-img">
+                            <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Lab">
+                        </div>
+                        <div class="article-meta">
+                            <span class="article-tag">بيولوجيا</span>
+                            <h4>التعقيد غير القابل للاختزال</h4>
+                            <p>كيف تشهد الأنظمة الحيوية الدقيقة على وجود تصميم ذكي خلف الخلق...</p>
+                            <a href="articles.html" style="color:var(--primary); font-weight:700;">اقرأ المزيد <i
+                                    class="fas fa-chevron-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">الأكثر قراءة</h4>
+                        <div class="popular-post">
+                            <div>
+                                <h5>الرد على شبهة الميراث في الإسلام</h5>
+                                <small>15 يناير 2026</small>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div>
+                                <h5>أدلة وجود الله العقلية: دليل الإتقان</h5>
+                                <small>10 فبراير 2026</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quran-section">
+        <div class="container verse-container animate__animated animate__fadeInUp">
+            <div class="verse-icon"><i class="fas fa-quran"></i></div>
+            <h2 class="quran-verse-text">"أَفِي اللَّهِ شَكٌّ فَاطِرِ السَّمَاوَاتِ وَالْأَرْضِ"</h2>
+            <div class="verse-ref">سورة إبراهيم - الآية 10</div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <h2 style="font-family:'Cairo'; font-size:35px; margin-bottom:20px;">هل لديك سؤال أو شبهة؟</h2>
+                    <p style="color:var(--text-gray); margin-bottom:30px;">فريقنا من الباحثين المتخصصين مستعد للإجابة
+                        على تساؤلاتكم بخصوص الإلحاد أو القضايا الفكرية المعاصرة.</p>
+                    <div style="display:flex; gap:20px; align-items:center;">
+                        <i class="fas fa-envelope-open-text" style="font-size:40px; color:var(--primary);"></i>
+                        <div>
+                            <h4 style="margin:0">راسلنا مباشرة</h4>
+                            <p style="margin:0">support@moslim-researcher.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="الاسم الكامل">
+                    <input type="email" placeholder="البريد الإلكتروني">
+                    <textarea placeholder="اكتب سؤالك أو رسالتك هنا بالتفصيل..."></textarea>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="icon (2).png" alt="Logo" style="filter: brightness(0) invert(1);">
+                        <span class="logo-text" style="color:#fff">الباحث المسلم</span>
+                    </div>
+                    <p>منصة علمية دعوية متخصصة في نقد الفكر الإلحادي وتقديم البراهين العقلية والعلمية على صحة الإسلام.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">المكتبة الشاملة</a></li>
+                        <li><a href="#">أحدث المقالات</a></li>
+                        <li><a href="#">من نحن</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>ملفات هامة</h4>
+                    <ul>
+                        <li><a href="#">الإعجاز العلمي</a></li>
+                        <li><a href="#">رد الشبهات</a></li>
+                        <li><a href="#">نقد الداروينية</a></li>
+                        <li><a href="#">أدلة الإيمان</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links newsletter">
+                    <h4>القائمة البريدية</h4>
+                    <p style="font-size:13px; opacity:0.6; margin-bottom:15px;">اشترك ليصلك جديد الأبحاث والكتب فور
+                        صدورها.</p>
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <button class="btn btn-primary" style="padding:10px 20px; font-size:14px;">اشتراك</button>
+                </div>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة &copy; 2026 - منصة الباحث المسلم. يُسمح بنشر المحتوى مع ذكر المصدر.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تغيير لون الهيدر عند التمرير
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '5px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // قائمة الهامبرغر للجوال
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const dropdowns = document.querySelectorAll('.nav-item');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+                // تغيير الأيقونة
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // إغلاق القائمة عند النقر على رابط
+        const navLinksItems = document.querySelectorAll('.nav-link');
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1100) {
+                    // إذا كان الرابط يحتوي على قائمة منسدلة
+                    if (this.nextElementSibling && this.nextElementSibling.classList.contains('dropdown')) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        parent.classList.toggle('active');
+                    } else {
+                        navLinks.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function (e) {
+            if (window.innerWidth <= 1100) {
+                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

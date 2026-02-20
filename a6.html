@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>هل نظرية التطور علم أم خرافة؟</title>
+  <meta name="description"
+    content="بحث يستعرض انتقادات علماء ملحدين ولاأدريين لنظرية التطور، مع أدلة من السجل الأحفوري والفيزياء.">
+  <link rel="icon" type="image/x-icon" href="icon (2).png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #e67e22;
+      --primary-dark: #d35400;
+      --accent: #27ae60;
+      --dark: #2c3e50;
+      --muted: #7f8c8d;
+      --bg: #ffffff;
+      --bg-soft: #fffbf7;
+      --card-shadow: 0 18px 50px rgba(12, 25, 34, 0.06);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+      margin: 0
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: 0.3s
+    }
+
+    a:hover {
+      color: var(--primary-dark)
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(6px);
+      border-bottom: 3px solid var(--primary)
+    }
+
+    /* Hero */
+    .page-hero {
+      padding: 30px 0;
+      background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%);
+      text-align: center;
+    }
+
+    .page-hero .title {
+      font-family: 'Cairo';
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--dark)
+    }
+
+    .page-hero .subtitle {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* Article */
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      margin: 18px 0 48px
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid #f3f3f3;
+      box-shadow: var(--card-shadow)
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .meta-right {
+      color: var(--muted);
+      font-weight: 700
+    }
+
+    /* Typography inside article */
+    .article-card h1 {
+      font-family: 'Cairo';
+      font-size: 28px;
+      color: var(--primary-dark);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .article-card h2 {
+      font-family: 'Cairo';
+      font-size: 24px;
+      color: var(--dark);
+      margin-top: 25px;
+      border-right: 5px solid var(--primary);
+      padding-right: 10px;
+    }
+
+    .article-card h3 {
+      font-family: 'Cairo';
+      font-size: 20px;
+      color: #444;
+      margin-top: 20px;
+      font-weight: 700;
+    }
+
+    .article-card p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .blockquote {
+      border-right: 4px solid var(--primary);
+      padding: 15px 20px;
+      margin: 20px 0;
+      background: var(--bg-soft);
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      height: 0;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ref-link {
+      display: block;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .widget {
+      background: #fff;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #f3f3f3
+    }
+
+    .widget h4 {
+      font-family: 'Cairo';
+      margin: 0 0 8px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    footer {
+      padding: 22px 0;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+    }
+
+    @media (max-width:1000px) {
+      .article-wrap {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="title">هل نظرية التطور علم أم خرافة؟</div>
+      <div class="subtitle">بحث في الانتقادات العلمانية والعلمية للداروينية الحديثة واكتشافات أصول البشر</div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="article-wrap">
+
+      <article class="article-card">
+
+        <div class="meta-row">
+          <div>
+            <h2 style="margin:0; border:none; padding:0; font-size:22px;">بحث: نقض نظرية التطور</h2>
+            <div style="color:var(--muted);font-size:13px; margin-top:5px;">تحديث: 11 فبراير 2026</div>
+          </div>
+          <div class="meta-right">بقلم: فريق البحث</div>
+        </div>
+
+        <h1>1. المقدمة</h1>
+        <p>تعتبر نظرية التطور (الداروينية الحديثة) هي النموذج السائد في البيولوجيا. ومع ذلك، ظهرت أصوات من داخل المجتمع
+          العلمي والفلسفي "العلماني" ترفض هذا النموذج ليس لأسباب دينية، بل لأسباب تتعلق بالاحتمالات الرياضية، ونقص السجل
+          الأحفوري، واستحالة اختزال الوعي في المادة. هؤلاء العلماء لا يرفضون بالضرورة فكرة "التغير عبر الزمن"، لكنهم
+          يرفضون الآلية الداروينية كتفسير شامل.</p>
+
+        <h1>2. أبرز العلماء والمفكرين (الملحدين/اللاأدريين) الناقدين</h1>
+
+        <h3>أ. السير فريد هويل (Fred Hoyle) - عالم فلك ورياضيات</h3>
+        <p>كان هويل ملحداً في معظم حياته (ومال لاحقاً نحو فكرة "الذكاء الكوني" غير الديني). وهو مؤسس نظرية "الكون
+          الثابت" وأحد أبرز علماء القرن العشرين.</p>
+        <div class="blockquote">
+          <strong>موقفه:</strong> هاجم بشدة فكرة "التولد التلقائي" (نشأة الحياة من مواد غير حية بالصدفة).<br>
+          <strong>حجته (الاحتمالات الرياضية):</strong> قام بحساب احتمالية تكوّن إنزيم واحد فقط عن طريق الصدفة العشوائية،
+          ووجد أنها مستحيلة رياضياً (10 أس 40,000).<br>
+          <strong>مقولته الشهيرة:</strong> شبه احتمالية ظهور الحياة بالصدفة بـ "إعصار يمر بساحة خردة ليقوم بتجميع طائرة
+          بوينغ 747 صالحة للطيران".<br>
+          <strong>النتيجة التي وصل إليها:</strong> رأى أن الكون والبيولوجيا يحملان بصمات "ذكاء" ما، لكنه لم يربطه بإله
+          الأديان التقليدي، بل طرح نظريات بديلة مثل (البانسبرميا).
+        </div>
+
+        <h3>ب. توماس ناجل (Thomas Nagel) - فيلسوف العقل</h3>
+        <p>هو ملحد صريح، وفيلسوف بارز بجامعة نيويورك. أصدر كتاباً أحدث ضجة كبرى بعنوان: "العقل والكون: لماذا يكاد يكون
+          التصور المادي للداروينية الحديثة خاطئاً" (Mind and Cosmos).</p>
+        <div class="blockquote">
+          <strong>موقفه:</strong> يرى أن الداروينية المادية تفشل فشلاً ذريعاً في تفسير "الوعي" (Consciousness) و"العقل"
+          (Reason).<br>
+          <strong>حجته (فجوة التفسير):</strong> يجادل ناجل بأن التطور البيولوجي المادي يمكنه (جدلاً) تفسير تطور الذراع
+          أو العين كأعضاء مادية، لكنه يعجز تماماً عن تفسير كيف تنشأ "تجربة الوعي الذاتي" والقيم الأخلاقية والمنطق من
+          مادة صماء عبر طفرات عشوائية.<br>
+          <strong>اقتباس:</strong> "أريد للإلحاد أن يكون صحيحاً... لكن المادية الداروينية لا يمكنها تفسير الواقع".
+        </div>
+
+        <h3>ج. جيري فودر (Jerry Fodor) و ماسيمو بياتيللي بالماريني</h3>
+        <p>فودر (فيلسوف وعالم إدراك ملحد) وباليماريني (عالم فيزياء حيوية وإدراك)، قاما بتأليف كتاب "ما أخطأ فيه داروين"
+          (What Darwin Got Wrong).</p>
+        <div class="blockquote">
+          <strong>موقفهما:</strong> يعلنان بوضوح أنهما ملحدان ولا يؤمنان بالخلق، لكنهما يريان أن "الانتخاب الطبيعي"
+          نظرية فارغة منطقياً ولا يمكن أن تكون المحرك للتطور.<br>
+          <strong>الحجة (نقد الآلية):</strong> يريان أن البيولوجيا الجزيئية الحديثة تظهر تعقيداً داخلياً (Internal
+          Constraints) يحدد شكل الكائن، وأن الطفرات العشوائية المفلترة بالانتخاب الطبيعي لا تملك القدرة الإبداعية لتصميم
+          هذه الهياكل المعقدة. يعتبران الداروينية "مغالطة دائرية".
+        </div>
+
+        <h3>د. ديفيد بيرلنسكي (David Berlinski) - عالم رياضيات وفيلسوف</h3>
+        <p>بيرلنسكي يصف نفسه بأنه "يهودي علماني" و"لا أدري" (Agnostic)، وهو ناقد شرس للداروينية.</p>
+        <div class="blockquote">
+          <strong>موقفه:</strong> يسخر من ادعاءات علماء التطور بأن النظرية حقيقة مطلقة، ويرى أنها مليئة بالثغرات.<br>
+          <strong>حجته (السجل الأحفوري والرياضيات):</strong><br>
+          1. <strong>غياب الأشكال الانتقالية:</strong> يشير إلى أن السجل الأحفوري يظهر ظهوراً مفاجئاً للكائنات (الانفجار
+          الكامبري) وليس تدرجاً بطيئاً كما تقتضي الداروينية.<br>
+          2. <strong>الاستحالة الحسابية:</strong> يرى أن عدد التغيرات المطلوبة لتحويل كائن لآخر يتطلب وقتاً أطول بكثير
+          من عمر الكون إذا اعتمدنا على العشوائية.
+        </div>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+
+        <h1>"أردي" تطعن بصحة نظرية داروين</h1>
+        <p>قدم العلماء الأميركيون دليلا جديدا على أن نظرية داروين في النشوء والارتقاء كانت خطأ، وذلك بكشف فريق عالمي من
+          علماء أصول الجنس البشري من جامعتي كين ستيت وكاليفورنيا النقاب عن أقدم أثر معروف للبشر على وجه الأرض، وهو هيكل
+          عظمي إثيوبي يبلغ عمره حوالي أربعة ملايين وأربعمائة ألف سنة أطلق عليه اسم "أردي".</p>
+
+        <p>وأعلن فريق البحث أمس الخميس أن اكتشاف "أردي" يثبت أن البشر لم يتطوروا عن أسلاف يشبهون قردة الشمبانزي، مبطلين
+          بذلك الافتراضات القديمة بأن الإنسان تطور من أصل قرد.</p>
+
+        <p>وكتب الباحثون في تقريرهم بمجلة ساينس أن "أردي" واحدة من أسلاف البشر، وأن السلالات المنحدرة منها لم تكن قردة
+          شمبانزي ولا أي نوع من القردة المعروفة حاليا.</p>
+
+        <p>ويؤكد العلماء أن أردي ربما تكون الآن أقدم أسلاف الإنسان المعروفين، لأنها أقدم بمليون سنة من "لوسي" التي كانت
+          تعد من أهم الأصول البشرية المعروفة.</p>
+
+        <h3>ضربة لنظرية داروين</h3>
+        <p>وعلق الدكتور زغلول النجار أستاذ الجيولوجيا في عدد من الجامعات العربية، بأن الغربيين بدؤوا يعودون إلى صوابهم
+          بعد أن كانوا يتعاملون مع أصل الإنسان من منطلق مادي وإنكار للأديان.</p>
+        <p>وقال في اتصال مع الجزيرة إن هذا الكشف العلمي الذي وجه ضربة قوية لنظرية داروين يمثل تطورا هاما جدا.</p>
+        <p>وقال النجار إن حديث الباحثين عن أربعة ملايين سنة أمر مبالغ فيه، متوقعا أن يكون عمر الإنسان على الأرض لا يتعدى
+          أربعمائة ألف سنة تقريبا.</p>
+
+        <p>من جهة أخرى أوضح سي أوين لوفغوي، وهو عالم أميركي في جامعة كنت من المتخصصين في أصل الإنسان، أنه أجرى دراسة على
+          الإنسان البدائي الذي يعرف باسم Ardipithecus ramidus الذي عاش قبل 4.4 ملايين سنة في إثيوبيا.</p>
+        <p>وأضاف في دراسة تنشر اليوم في مجلة ساينس، أن "البشر غالبا ما يظنون الناس تطوروا من القردة، لكن ذلك ليس صحيحا".
+        </p>
+        <p>وتابع أنه "شاعت فكرة أن البشر هم نسخة متطورة عن الشمبانزي، لكن دراسة الإنسان البدائي ساهمت في تأكدنا بأنه لا
+          يمكن أن يتطور البشر من الشمبانزي أو الغوريلا".</p>
+
+        <h3>وصف أردي</h3>
+        <p>ووصف العلماء الهيكل العظمي الجزئي لأردي وهي أنثى بطول 120 سنتمترا ووزن خمسين كيلوغراما تقريبا، من نوع
+          أرديبيتيكوس راميدوس الذي عاش قبل 4.4 مليون سنة في إثيوبيا.</p>
+        <p>وكان لأردي رأس يشبه رأس القرد وأصابع قدم متقابلة تسمح لها بتسلق الأشجار بسهولة، لكن يديها ومعصميها وتجويف
+          الحوض لديها تظهر أنها كانت تسير منتصبة كالبشر لا منحنية على مفاصل الأصابعة كالشمبانزي والغوريلا.</p>
+        <p>وقال تيم وايت من جامعة كاليفورنيا بيركيلي الذي ساعد في قيادة فريق البحث إن "الناس لديهم اعتقاد بأن الشمبانزي
+          الحديثة لم تتطور كثيرا، وأن الجد المشترك الأخير كان مثل الشمبانزي تقريبا وأن النسل البشري هو الذي طرأ عليه كل
+          التطور".</p>
+        <p>وقام وايت وبيرهان أسفو من مؤسسة أبحاث ريفت فالي وفريق كبير بتحليل كل عظام "أردي" التي عثر عليها، واكتشفوا
+          أنها ربما كانت أكثر مسالمة مقارنة بالشمبانزي الحالية، مستدلين بأنها على سبيل المثال لا تملك تلك الأنياب الحادة
+          التي تستخدمها الشمبانزي في العراك.</p>
+        <p style="font-size:14px; color:#777;">المصدر: الجزيرة + رويترز<br>مصدر:
+          https://www.ajnet.me/misc/2009/10/3/أردي-تطعن-بصحة-نظرية-داروين</p>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+
+        <div class="ref-link">
+          <p style="margin-bottom:10px">اود ان اقل لكم ان تطلعوا على هذا البحث او المقال من موقع حارس العقيده:</p>
+          <a href="https://www.hurras.org/vb/node/849592" target="_blank">https://www.hurras.org/vb/node/849592</a>
+        </div>
+
+        <h1>تفنيد الأدلة (فيديوهات)</h1>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/syJw8TjFi_U?si=melH5ZwonPIwW_Ea" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/IPIUpPG_9c8?si=AzxUODCGGqYZx2Yk" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/hLQpUMorirY?si=bQPy3AILsFN9uiUX" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/EKD-cNlwpeQ?si=NKV9iaqWl3x-1p-E" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/zCfMYV7JaAw?si=Mt2EeB9Kbf2cMPz0" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+      </article>
+
+      <aside class="sidebar">
+
+        <div class="widget">
+          <h4>مقالات مقترحة</h4>
+          <div style="display:flex; gap:10px; align-items:center; margin-top:10px">
+            <div>
+              <a href="#" style="font-weight:800; display:block">هل نظرية التطور علم أم خرافة؟</a>
+              <div style="color:var(--muted);font-size:13px">11 فبراير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>الأكثر قراءة</h4>
+          <div style="display:flex; gap:10px; align-items:center; margin-top:10px">
+            <div>
+              <a href="#" style="font-weight:800; display:block">الرد على شبهة الميراث في الإسلام</a>
+              <div style="color:var(--muted);font-size:13px">15 يناير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>شارك المقال</h4>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a href="#"
+              onclick="navigator.share && navigator.share({title:document.title,url:location.href})">مشاركة</a>
+            <a href="#" onclick="window.print()">طباعة</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <footer>
+      © 2026 - منصة الباحث المسلم — support@moslim-researcher.com
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

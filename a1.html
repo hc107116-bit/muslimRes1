@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>هل الكون أزلي أم له بداية؟ — الباحث المسلم</title>
+  <meta name="description" content="مقال تفصيلي: هل الكون أزلي أم له بداية؟ قراءة علمية وفلسفية مترابطة.">
+  <link rel="icon" type="image/x-icon" href="icon (2).png">
+
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #e67e22;
+      --primary-dark: #d35400;
+      --accent: #27ae60;
+      --dark: #2c3e50;
+      --muted: #7f8c8d;
+      --bg: #ffffff;
+      --bg-soft: #fffbf7;
+      --card-shadow: 0 18px 50px rgba(12, 25, 34, 0.06);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.8;
+      margin: 0
+    }
+
+    a {
+      color: inherit
+    }
+
+    /* Container */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    /* NAVBAR (copy of main) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(6px);
+      border-bottom: 3px solid var(--primary)
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .logo img {
+      height: 52px;
+      border-radius: 10px
+    }
+
+    .logo-text {
+      font-family: 'Cairo';
+      font-weight: 900;
+      color: var(--primary);
+      font-size: 20px
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .nav-item {
+      padding: 14px 12px;
+      border-radius: 10px
+    }
+
+    .nav-item:hover {
+      background: var(--bg-soft)
+    }
+
+    .nav-link {
+      font-weight: 800
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .header-search input {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #eee;
+      min-width: 200px
+    }
+
+    /* Hero small */
+    .page-hero {
+      padding: 22px 0;
+      background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%)
+    }
+
+    .page-hero .title {
+      font-family: 'Cairo';
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--dark)
+    }
+
+    .page-hero .subtitle {
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    /* Article layout */
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      margin: 18px 0 48px
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid #f3f3f3;
+      box-shadow: var(--card-shadow)
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px
+    }
+
+    .meta-left {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .author-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover
+    }
+
+    .meta-right {
+      color: var(--muted);
+      font-weight: 700
+    }
+
+    .cover {
+      width: 100%;
+      height: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 12px 0
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .content h2 {
+      font-family: 'Cairo';
+      font-size: 22px;
+      color: var(--dark);
+      margin-top: 18px
+    }
+
+    .content p {
+      margin: 10px 0;
+      color: #333
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, rgba(230, 126, 34, 0.06), rgba(39, 174, 96, 0.03));
+      border-left: 4px solid var(--primary);
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0
+    }
+
+    .toc {
+      background: #fff;
+      border: 1px dashed #eee;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 12px 0
+    }
+
+    .toc a {
+      display: block;
+      color: var(--primary);
+      font-weight: 800;
+      margin: 6px 0
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .widget {
+      background: #fff;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #f3f3f3
+    }
+
+    .widget h4 {
+      font-family: 'Cairo';
+      margin: 0 0 8px
+    }
+
+    .popular {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .popular img {
+      width: 72px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px
+    }
+
+    /* Footer */
+    footer {
+      padding: 22px 0;
+      color: var(--muted);
+      text-align: center
+    }
+
+    /* Responsive */
+    @media (max-width:1000px) {
+      .article-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .header-search input {
+        min-width: 120px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="title">المقال الأول: هل الكون أزلي أم له بداية؟</div>
+      <div class="subtitle">مقال يحاور تاريخ الأفكار الفلسفية والعلمية حول بداية الكون.</div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="article-wrap">
+
+      <!-- Main Article -->
+      <article class="article-card">
+
+        <div class="meta-row">
+          <div class="meta-left">
+            <img class="author-img" src="https://via.placeholder.com/80">
+            <div>
+              <div style="font-weight:800"></div>
+              <div style="color:var(--muted);font-size:13px">15 يناير 2026 · قراءة 12 دقيقة</div>
+            </div>
+          </div>
+          <div class="meta-right">تصنيف: فيزياء وفلسفة</div>
+        </div>
+
+        <h1 style="font-family:'Cairo';">هل الكون أزلي أم له بداية؟</h1>
+
+        <div class="cover"><img
+            src="https://egyresmag.com/wp-content/uploads/2021/03/%D8%B9%D8%B6%D9%8A%D9%91%D8%A7%D8%AA_1.jpg" alt="">
+        </div>
+
+        <div class="toc">
+          <strong>فهرس المقال</strong>
+          <a href="#sec-parmenides">بارمينيدس ومقولة الأزلية</a>
+          <a href="#sec-modern">الأدلة العلمية المعاصرة</a>
+          <a href="#sec-thermo">الحرارة والديناميكا الحرارية</a>
+          <a href="#sec-conclusion">خلاصة وتداعيات فلسفية</a>
+        </div>
+
+        <div class="content">
+
+          <h2 id="sec-parmenides">بارمينيدس ومقولة الأزلية</h2>
+          <p>عجبتني وجهة نظر الفيلسوف اليوناني بارمينيدس عن نظرية الوجود، حينما قال أنه ليس هناك شيء يأتي من العدم
+            وبالتالي فإن الوجود أبدي. هذه المقولة المتناقضة تحمل في بدايتها حقيقة إلهية تؤكد أن الكون مخلوق وليس أبدي —
+            كما تراها بعض القراءات — لكن نهايتها تعطّل الفلسفة التحليلية.</p>
+
+          <p>على المستوى الشخصي، أنا أتفق مع مبدأ السببية: لكل سبب مسبب، ولكل حدث محدث له سبب. لذلك لا أؤمن تمامًا
+            بأزلية الوجود كما طرحها بارمينيدس. ومع ذلك أرى قيمة في مناقشة هذا التناقض عمليًا لا دينيًا.</p>
+
+          <h2 id="sec-modern">الأدلة العلمية المعاصرة</h2>
+          <p>هناك نتيجة واحدة اتفق عليها العلماء بمعطيات مختلفة: من جورج لومتر في العشرينات إلى ستيفن هوكينغ في الألفية
+            الحديثة، طوّروا نظرية الانفجار العظيم التي تقول بأن الكون مرّ بحالة أولية ذات كثافة وحرارة عاليتين. هذه
+            النظرية فسرت الكثير من الملاحظات مثل تمدد الكون وخلفية الميكروويف الكونية.</p>
+
+          <p>ميل العديد من علماء الفيزياء لقبول هذه النظرية لم يأتِ من فراغ — بل من ملاحظات تجريبية موضوعية، ومن قدرة
+            هذه النظرية على تفسير بيانات مرصودة كانت سابقًا غامضة، كما أن رفضها أدى إلى انهيار بدائل سابقة مثل نظرية
+            الحالة الثابتة.</p>
+
+          <div class="highlight">ملاحظة: الانفجار العظيم لا يعني "تكوّن" من مادة موجودة سابقًا، بل يصف حالة الكون في
+            بداياته عندما كانت الكثافة والحرارة عالية جدًا.</div>
+
+          <h2 id="sec-thermo">الحرارة وقانون الديناميكا الحرارية</h2>
+          <p>بعض العلماء -كما ذكر الأستاذ صباح إبراهيم- يشيرون إلى أن لو كان الكون أزليًا منذ الأزل لكانت طاقته القابلة
+            للاستخدام قد نفدت بالفعل طبقا للقانون الثاني للديناميكا الحرارية. هذا الحجة تربط بين الملاحظة العلمية
+            والاستنتاج الفلسفي بأن الزمن له حدّية.</p>
+
+          <p>من الطبيعي أن نتفق مع تفسير أنشتاين للمادة والطاقة: المادة تتحول إلى طاقة والعكس صحيح، وهذا لا يلغي ضرورة
+            وجود مسبب أول قوي، قادر، وحكيم — كما يؤكد بعض المفكرين.</p>
+
+          <h2 id="sec-conclusion">خلاصة وتداعيات فلسفية</h2>
+          <p>نتيجة العمل العلمي والفلسفي تشير بقوة إلى أن التعامل مع مسألة "البداية" يحتاج انسجامًا بين الفيزياء،
+            الفلسفة، والمنهج التأملي. سواء قبلنا بفكرة البداية أم بالأزلية، فإن الحوار يبقى أساسيًا.</p>
+
+          <p>في رأيي، رفض العلماء للأديان لم يجعل نظرياتهم أقوى — بل دفعهم أحيانًا إلى البحث عن تبريرات بديلة لوجود
+            الكون. أما لو قبلوا باحتمالية وجود خالق، فقد تتغير قراءة بعض النظريات بطريقة عميقة.</p>
+
+          <h3>المراجع المقترحة</h3>
+          <ul>
+            <li>جورج لومتر - مقالات حول توسع الكون.</li>
+            <li>ستيفن هوكينغ - مفاهيم في الكوزمولوجيا.</li>
+            <li>مقالات فلسفية عن بارمينيدس والأزلية.</li>
+          </ul>
+
+        </div>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="widget">
+          <h4>مقالات مقترحة</h4>
+          <div class="popular">
+
+            <div>
+              <div style="font-weight:800">التعقيد غير القابل للاختزال</div>
+              <div style="color:var(--muted);font-size:13px">22 يناير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>الأكثر قراءة</h4>
+          <div class="popular">
+
+            <div>
+              <div style="font-weight:800">الرد على شبهة الميراث في الإسلام</div>
+              <div style="color:var(--muted);font-size:13px">15 يناير 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>شارك المقال</h4>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" href="#"
+              onclick="navigator.share?navigator.share({title:document.title,url:location.href}):copyLink(event)">شارك</a>
+            <a class="btn" href="#" onclick="window.print()">طباعة</a>
+            <a class="btn" href="#" download="a1-article.pdf">تحميل PDF</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <footer>
+      © 2026 - منصة الباحث المسلم — للمزيد راسل: support@moslim-researcher.com
+    </footer>
+
+  </main>
+
+  <script>
+    function copyLink(e) { e.preventDefault(); navigator.clipboard.writeText(location.href).then(() => alert('تم نسخ الرابط للمشاركة')) }
+  </script>
+
+</body>
+
+</html>
